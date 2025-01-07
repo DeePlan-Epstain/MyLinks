@@ -340,7 +340,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
             <Modal open={this.state.isOpen} onClose={this.handleClose} >
               <Box sx={style}>
                 <div className={styles.ModalHeader}>
-                  <span style={{ fontSize: '25px', fontWeight: 'bold', marginRight: '0.5rem' }}>קישורים לבחירה</span>
+                  <span style={{ fontSize: '25px', fontWeight: 'bold', marginRight: '0.5rem', fontFamily: "sans-serif" }}>קישורים לבחירה</span>
                   <Button variant="text" color="primary" onClick={() => this.setState({ InnerModalIsOpen: true })}>
                     <AddLinkIcon />
                   </Button>
@@ -396,7 +396,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
             <Modal open={this.state.InnerModalIsOpen} onClose={this.handleCloseInnerModal}>
               <Box sx={InnerModalstyle}>
                 <div className={styles.ModalHeader}>
-                  <span style={{ fontSize: '25px', fontWeight: 'bold', marginRight: '0.5rem' }}>צור קישור חדש</span>
+                  <span style={{ fontSize: '25px', fontWeight: 'bold', marginRight: '0.5rem', fontFamily: "sans-serif" }}>צור קישור חדש</span>
                 </div>
                 <Divider />
                 <div style={{ padding: '1rem 1rem 0 1rem' }}>
