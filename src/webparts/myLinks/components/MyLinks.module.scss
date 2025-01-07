@@ -1,0 +1,123 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.myLinks {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcomeImage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: "[theme:link, default:#03787c]";
+    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
+
+    &:hover {
+      text-decoration: underline;
+      color: "[theme:linkHovered, default: #014446]";
+      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
+    }
+  }
+}
+
+.ModalStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  max-height: 30rem;
+  overflow-y: scroll;
+
+}
+
+.AddBtn {
+  width: fit-content;
+  text-wrap: nowrap;
+  margin-right: 1rem;
+
+}
+
+.ListItem {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.2);
+  max-height: 50px;
+  // max-width: 180px;
+  transition: 0.2s;
+
+  .listItemChildDiv {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.Link {
+  white-space: 'break-spaces';
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+
+.ListItem:hover {
+  background-color: #1977db25;
+}
+
+.linksContainer {
+  padding: 1em;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  width: 98%;
+}
+
+.ModalHeader {
+  margin: 1rem !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listItem {
+  :nth-child(1) {
+
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .linksContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .linksContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "fc2b2266-0e8b-47d2-a053-a214d40fc7c8",
+  "alias": "MyLinksWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart",
+    "TeamsPersonalApp",
+    "TeamsTab",
+    "SharePointFullPage"
+  ],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": {
+        "default": "Advanced"
+      },
+      "title": {
+        "default": "MyLinks"
+      },
+      "description": {
+        "default": "MyLinks description"
+      },
+      "officeFabricIconFontName": "Link",
+      "properties": {
+        "description": "MyLinks",
+        "MyLinksIdList": "35cde667-bf74-45bf-bf51-5cebf6af9892",
+        "UsersLinksIdList": "7327591b-5800-4421-a5e1-b655fcca66a2",
+        "NumberOflinks": 20
+      }
+    }
+  ]
+}
