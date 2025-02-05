@@ -442,8 +442,8 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
 
               {this.state.MyLinks?.length > 0 ? this.state.MyLinks.map((item: any, index: number) => (
                 <>
-                  <div key={uuidv4()} className={styles.ListItem}>
-                    <div onClick={() => window.location.href = item?.Title} className={styles.listItemChildDiv}>
+                  <div key={uuidv4()} onClick={() => window.open(item?.Title, '_blank')} className={styles.ListItem}>
+                    <div className={styles.listItemChildDiv}>
 
                       <LinkIcon htmlColor='#1976db' />
                       <Tooltip title={item?.LinkName}>
