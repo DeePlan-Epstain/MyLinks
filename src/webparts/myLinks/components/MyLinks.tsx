@@ -78,6 +78,10 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
     this.getList()
   }
 
+  // componentDidUpdate(prevProps: Readonly<IMyLinksProps>, prevState: Readonly<IMyLinksStates>, snapshot?: any): void {
+  //   console.log(this.state)
+  // }
+
   getList = async () => {
     const user = await this.sp.web.currentUser()
     const allLinks = await this.sp.web.lists.getById(this.props.UsersLinksIdList).items.top(this.props.NumberOflinks).getAll()
@@ -222,7 +226,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
     let array = this.state.LinkNewArr.filter(item => i != item)
     this.setState({
       LinkNewArr: array,
-      // checked: [...this.state.checked, ...array]
+      checked: [...this.state.checked, ...array]
     })
 
     if (this.state.MyLinks.filter(item => i.LinkName === item.LinkName).length > 0) {
@@ -230,7 +234,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
 
       this.setState({
         MyLinks: array,
-        // checked: array
+        checked: array
       })
     }
 
@@ -451,7 +455,6 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
                       </Tooltip>
                     </div>
 
-                    {/* {item.LinkName !== 'כלי צמ"ה' && item?.Flag ? <ClearIcon fontSize='small' onClick={(e) => { e.stopPropagation(), this.removeItem(item) }} /> : null} */}
                   </div>
                 </>
               )) : <span style={{ fontWeight: 'bold' }}>לא נבחרו קישורים להצגה</span>}
