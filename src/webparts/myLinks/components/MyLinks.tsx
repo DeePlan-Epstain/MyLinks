@@ -89,6 +89,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
     let i = items.filter(item => {
       return item.UsernameId === user.Id
     })
+    console.log("getList= - i:", i)
     if (i.length > 0) {
       this.setState({
         currUserExsit: true,
@@ -97,7 +98,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
         stateLinks: JSON.parse(i[0]?.Links),
         checked: JSON.parse(i[0]?.Links),
         LinkNewArr: JSON.parse(i[0]?.MainListLinks) || []
-      })
+      }, () => console.log(this.state.checked))
     }
     this.setState({
       user: user,
@@ -142,7 +143,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
   }
 
   handleOpen = () => {
-    this.setState({ isOpen: !this.state.isOpen, checked: this.state.MyLinks })
+    this.setState({ isOpen: !this.state.isOpen, checked: this.state.MyLinks || [] })
   }
 
   updateList = (LinkName: string) => {
@@ -159,8 +160,9 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
 
   handleToggle = (index: number, value: any) => () => {
     if (value.LinkName !== 'רכבים וכלי צמ"ה') {
+      console.log(this.state.checked)
       // First, let's see if the item is already in the 'checked' list.
-      const currentIndex = this.state.checked.findIndex((item) => item.LinkName === value.LinkName);
+      const currentIndex = this.state.checked?.findIndex((item) => item.LinkName === value.LinkName);
 
       // Copy the current 'checked' state to avoid direct state mutation.
       const newChecked = [...this.state.checked];
@@ -375,7 +377,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
                             <ListItemIcon dir='rtl'>
                               <Checkbox dir='rtl'
                                 edge="start"
-                                checked={this.state.checked.filter((item: any) => { return item.LinkName === value.LinkName }).length > 0}
+                                checked={this.state.checked?.filter((item: any) => { return item.LinkName === value.LinkName }).length > 0}
                                 tabIndex={-1}
                                 disableRipple
                                 inputProps={{ 'aria-labelledby': labelId }}
