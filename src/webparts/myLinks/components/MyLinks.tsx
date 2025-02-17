@@ -443,7 +443,7 @@ export default class MyLinks extends React.Component<IMyLinksProps, IMyLinksStat
               </Box>
             </Modal>
             <span style={{ fontSize: '25px', fontWeight: 'bold', marginRight: '0.5rem' }}>הקישורים שלי</span>
-            <Button style={{ marginRight: '1rem', backgroundColor: 'white' }} size='small' className={styles.AddBtn} onClick={() => this.handleOpen()} variant='outlined' startIcon={<AddIcon style={{ paddingLeft: '0.5em' }} />}>הוספת קישור</Button>
+            <Button style={{ marginRight: '1rem', backgroundColor: 'white' }} size='small' className={styles.AddBtn} onClick={() => this.handleOpen()} variant='outlined' startIcon={<AddIcon style={{ paddingLeft: '0.5em' }} />}>הוספת/עדכון קישור</Button>
             <div className={styles.linksContainer} >
 
               {this.state.MyLinks?.length > 0 ? this.state.MyLinks.map((item: any, index: number) => (
